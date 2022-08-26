@@ -10,6 +10,8 @@ import ComponentN from './ComponentN';
 import ComponentO from './ComponentO';
 import ComponentP from './ComponentP';
 import ComponentR from './ComponentR';
+import ComponentS from './ComponentS';
+import ComponentT from './ComponentT';
 import DummyComponent from './DummyComponent';
 import DummyNested from './DummyNested';
 
@@ -22,6 +24,8 @@ function App(props: StoreProps) {
 
   const [collapseOne, setCollapseOne] = useState<boolean>(false);
   const [collapseTwo, setCollapseTwo] = useState<boolean>(false);
+  const [collapseThree, setCollapseThree] = useState<boolean>(false);
+
 
   return (
     <div className="App">
@@ -36,9 +40,16 @@ function App(props: StoreProps) {
           Also observe by toggling sections, how a parent re-render can cause a non-observed component to update.
           Healthy patterns are denoted with 🎉.
         </div>
+        <div style={{ fontSize: '11px' }}>
+          <strong>Resources:</strong>
+          <a href='https://www.joshwcomeau.com/react/why-react-re-renders/#profiling-with-the-react-devtools'>Why React Re-Renders by Josh Comeau</a>
+          <a href='https://mobx.js.org/react-integration.html'>Mobx React Integration</a>
+          <a href='https://codingislove.com/setup-mobx-react-context/'>How to setup Mobx with React Context</a>
+        </div>
         <div>
           <button onClick={() => { setCollapseOne(!collapseOne) }}>Toggle Section One</button>
           <button onClick={() => { setCollapseTwo(!collapseTwo) }}>Toggle Section Two</button>
+          <button onClick={() => { setCollapseThree(!collapseThree) }}>Toggle Section Three</button>
         </div>
         <div>
           <button onClick={() => { store.increaseA() }}>A</button>
@@ -57,6 +68,10 @@ function App(props: StoreProps) {
           <button onClick={() => { store.increaseN() }}>N</button>
           <button onClick={() => { store.increaseO() }}>O</button>
           <button onClick={() => { store.increaseP() }}>P</button>
+          <button onClick={() => { store.increaseQ() }}>Q</button>
+          <button onClick={() => { store.increaseR() }}>R</button>
+          <button onClick={() => { store.increaseS() }}>S</button>
+          <button onClick={() => { store.increaseT() }}>T</button>
         </div>
       </div>
 
@@ -105,6 +120,16 @@ function App(props: StoreProps) {
 
         <span>observer wrapped export function 🎉🎉🎉, like N but it works</span>
         <ComponentR />
+      </div>
+
+      <div style={{ display: collapseThree ? 'none' : 'block' }}>
+        <h2>Context HOC DI</h2>
+
+        <span>clean non observer with di</span>
+        <ComponentS otherProp="pizza" />
+
+        <span>clean observer with di</span>
+        <ComponentT otherProp="taco" />
       </div>
     </div>
   )

@@ -14,6 +14,10 @@ body {
   padding: 30px;
 }
 
+.App a {
+  display: block;
+}
+
 h1,h2 {
   margin:0 0 10px 0;
   font-size:18px;
