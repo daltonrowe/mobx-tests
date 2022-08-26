@@ -26,7 +26,7 @@ const ComponentC = observer((props: StoreProps) => {
         <button onClick={handleClick}>Increase Counter C</button>
       </div>
 
-      <span>store</span>
+      <span>store 🎉</span>
       <ComponentD store={store} />
 
       <span>store / count</span>
@@ -38,7 +38,7 @@ const ComponentC = observer((props: StoreProps) => {
       <span>store / action</span>
       <ComponentG store={store} action={() => { store.increaseG() }} />
 
-      <span>store / action + useCallback</span>
+      <span>store / action + useCallback 🎉</span>
       <ComponentH store={store} action={handleClickCallback} />
 
       <span>store / count + memo</span>
