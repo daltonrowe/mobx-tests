@@ -102,11 +102,28 @@ export const StoreContext = createContext<StoreType>(store)
 
 export const useStore = () => useContext(StoreContext);
 
-export const withStore = (Component: any) => (props: any) => {
-  return <Component {...props} store={useStore()} />;
+// cleaner currying but no react component name
+// export const withStore = (Component: any) => (props: any) => {
+//   return <Component {...props} store={useStore()} />;
+// };
+
+// capital WithStore displayed as react component name
+export const withStore = (Component: any) => {
+  return function WithStore(props: any) {
+    return <Component {...props} store={useStore()} />;
+  }
 };
 
-export const withStoreAndObserver = (Component: any) => (props: any) => {
-  const Observed = observer(Component)
-  return <Observed {...props} store={useStore()} />;
+// cleaner currying but no react component name
+// export const withStoreAndObserver = (Component: any) => (props: any) => {
+//   const Observed = observer(Component)
+//   return <Observed {...props} store={useStore()} />;
+// };
+
+// capital WithStore displayed as react component name
+export const withStoreAndObserver = (Component: any) => {
+  return function WithStoreAndObserver(props: any) {
+    const Observed = observer(Component)
+    return <Observed {...props} store={useStore()} />;
+  }
 };
