@@ -2,16 +2,16 @@ import { observer } from "mobx-react-lite";
 import { StoreType, withDestructStoreAndObserver, withStoreAndObserver } from "../store/store";
 
 interface ComponentVImplProps {
-  counterV: number;
-  increaseV: () => void
+  counter: number;
+  handleClick: () => void
   otherProp: string
 }
 
-const ComponentVImpl = ({ counterV, increaseV, otherProp }: ComponentVImplProps) => {
+const ComponentVImpl = ({ counter, handleClick, otherProp }: ComponentVImplProps) => {
   return (
     <div>
-      <pre>{counterV}</pre>
-      <button onClick={() => { increaseV() }}>Increase Counter V ({otherProp})</button>
+      <pre>{counter}</pre>
+      <button onClick={handleClick}>Increase Counter V ({otherProp})</button>
     </div>
   )
 };
@@ -23,7 +23,7 @@ interface ComponentVProps {
 
 const ComponentV = ({ store, otherProp }: ComponentVProps) => {
   const { counterV, increaseV } = store;
-  return <ComponentVImpl counterV={counterV} increaseV={increaseV} otherProp={otherProp} />
+  return <ComponentVImpl counter={counterV} handleClick={() => { increaseV() }} otherProp={otherProp} />
 }
 
 export default withStoreAndObserver(ComponentV)
