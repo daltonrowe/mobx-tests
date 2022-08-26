@@ -24,6 +24,7 @@ export const Store = types.model('Store', {
   counterS: types.optional(types.number, 0),
   counterT: types.optional(types.number, 0),
   counterU: types.optional(types.number, 0),
+  counterV: types.optional(types.number, 0),
 }).actions(self => {
   return {
     increaseA: () => {
@@ -89,6 +90,9 @@ export const Store = types.model('Store', {
     increaseU: () => {
       self.counterU = self.counterU + 1
     },
+    increaseV: () => {
+      self.counterV = self.counterV + 1
+    },
   }
 })
 
@@ -125,5 +129,17 @@ export const withStoreAndObserver = (Component: any) => {
   return function WithStoreAndObserver(props: any) {
     const Observed = observer(Component)
     return <Observed {...props} store={useStore()} />;
+  }
+};
+
+// this seems like a bad idea, but not smart enough to know why
+export const withDestructStoreAndObserver = (Component: any) => {
+  return function WithDestructStoreAndObserver(props: any) {
+    const store = useStore();
+    console.log(store);
+
+    const combined = { ...store, ...props };
+
+    return <Component {...combined} />;
   }
 };

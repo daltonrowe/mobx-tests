@@ -13,6 +13,7 @@ import ComponentR from './ComponentR';
 import ComponentS from './ComponentS';
 import ComponentT from './ComponentT';
 import ComponentU from './ComponentU';
+import ComponentV from './ComponentV';
 import DummyComponent from './DummyComponent';
 import DummyNested from './DummyNested';
 
@@ -73,6 +74,8 @@ function App(props: StoreProps) {
           <button onClick={() => { store.increaseR() }}>R</button>
           <button onClick={() => { store.increaseS() }}>S</button>
           <button onClick={() => { store.increaseT() }}>T</button>
+          <button onClick={() => { store.increaseU() }}>U</button>
+          <button onClick={() => { store.increaseV() }}>V</button>
         </div>
       </div>
 
@@ -129,11 +132,14 @@ function App(props: StoreProps) {
         <span>non observer with di</span>
         <ComponentS otherProp="pizza" />
 
-        <span>observer with di</span>
+        <span>observer with di 🎉</span>
         <ComponentT otherProp="hut" />
 
-        <span>di store and observer</span>
+        <span>di store and observer 🎉</span>
         <ComponentU otherProp="taco" />
+
+        <span>separate di from implementation</span>
+        <ComponentV otherProp="bell" />
       </div>
     </div>
   )
