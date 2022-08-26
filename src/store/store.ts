@@ -9,6 +9,7 @@ export const Store = types.model('Store', {
   counterF: types.optional(types.number, 0),
   counterG: types.optional(types.number, 0),
   counterH: types.optional(types.number, 0),
+  counterI: types.optional(types.number, 0),
 }).actions(self => {
   return {
     increaseA: () => {
@@ -41,6 +42,10 @@ export const Store = types.model('Store', {
 
     increaseH: () => {
       self.counterH = self.counterH + 1
+    },
+
+    increaseI: () => {
+      self.counterI = self.counterI + 1
     },
   }
 })

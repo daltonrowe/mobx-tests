@@ -6,6 +6,7 @@ import ComponentE from "./ComponentE";
 import ComponentF from "./ComponentF";
 import ComponentG from "./ComponentG";
 import ComponentH from "./ComponentH";
+import ComponentI from "./ComponentI";
 
 const ComponentC = observer((props: StoreProps) => {
   const { store } = props;
@@ -37,8 +38,11 @@ const ComponentC = observer((props: StoreProps) => {
       <span>store / action</span>
       <ComponentG store={store} action={() => { store.increaseG() }} />
 
-      <span>store / useCallback action</span>
+      <span>useCallback</span>
       <ComponentH store={store} action={handleClickCallback} />
+
+      <span>memo</span>
+      <ComponentI store={store} count={store.counterI} />
     </div>
   )
 })
