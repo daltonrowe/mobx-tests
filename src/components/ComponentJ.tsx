@@ -9,7 +9,7 @@ function ComponentJ(props: StoreProps) {
     <div>
       <div>
         <pre>{store.counterJ}</pre>
-        <button onClick={handleClick}>Increase Counter J</button>
+        <button onClick={() => { store.increaseJ() }}>Increase Counter J</button>
       </div>
 
       <span>store</span>
