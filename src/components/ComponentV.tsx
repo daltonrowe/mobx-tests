@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { StoreType, withDestructStoreAndObserver, withStoreAndObserver } from "../store/store";
+import { StoreType, withStoreAndObserver } from "../store/store";
 
 interface ComponentVImplProps {
   counter: number;

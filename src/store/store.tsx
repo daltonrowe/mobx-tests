@@ -131,15 +131,3 @@ export const withStoreAndObserver = (Component: any) => {
     return <Observed {...props} store={useStore()} />;
   }
 };
-
-// this seems like a bad idea, but not smart enough to know why
-export const withDestructStoreAndObserver = (Component: any) => {
-  return function WithDestructStoreAndObserver(props: any) {
-    const store = useStore();
-    console.log(store);
-
-    const combined = { ...store, ...props };
-
-    return <Component {...combined} />;
-  }
-};
