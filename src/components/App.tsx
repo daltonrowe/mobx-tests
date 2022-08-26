@@ -44,8 +44,8 @@ function App(props: StoreProps) {
         <div style={{ fontSize: '11px' }}>
           <strong>Resources:</strong>
           <a href='https://www.joshwcomeau.com/react/why-react-re-renders/#profiling-with-the-react-devtools'>Why React Re-Renders by Josh Comeau</a>
-          <a href='https://mobx.js.org/react-integration.html'>Mobx React Integration</a>
-          <a href='https://codingislove.com/setup-mobx-react-context/'>How to setup Mobx with React Context</a>
+          <a href='https://mobx.js.org/react-integration.html'>Mobx React Integration by MobX Official Docs</a>
+          <a href='https://codingislove.com/setup-mobx-react-context/'>How to setup Mobx with React Context by Coding is Love</a>
         </div>
         <div>
           <button onClick={() => { setCollapseOne(!collapseOne) }}>Toggle Section One</button>
