@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import { Instance, types } from "mobx-state-tree";
 import { createContext, useContext } from "react";
 
@@ -22,6 +23,7 @@ export const Store = types.model('Store', {
   counterR: types.optional(types.number, 0),
   counterS: types.optional(types.number, 0),
   counterT: types.optional(types.number, 0),
+  counterU: types.optional(types.number, 0),
 }).actions(self => {
   return {
     increaseA: () => {
@@ -84,6 +86,9 @@ export const Store = types.model('Store', {
     increaseT: () => {
       self.counterT = self.counterT + 1
     },
+    increaseU: () => {
+      self.counterU = self.counterU + 1
+    },
   }
 })
 
@@ -99,4 +104,9 @@ export const useStore = () => useContext(StoreContext);
 
 export const withStore = (Component: any) => (props: any) => {
   return <Component {...props} store={useStore()} />;
+};
+
+export const withStoreAndObserver = (Component: any) => (props: any) => {
+  const Observed = observer(Component)
+  return <Observed {...props} store={useStore()} />;
 };

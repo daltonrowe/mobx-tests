@@ -12,6 +12,7 @@ import ComponentP from './ComponentP';
 import ComponentR from './ComponentR';
 import ComponentS from './ComponentS';
 import ComponentT from './ComponentT';
+import ComponentU from './ComponentU';
 import DummyComponent from './DummyComponent';
 import DummyNested from './DummyNested';
 
@@ -118,7 +119,7 @@ function App(props: StoreProps) {
         <span>observer deeply nested 🎉</span>
         <DummyNested />
 
-        <span>observer wrapped export function 🎉🎉🎉, like N but it works</span>
+        <span>observer wrapped export function 🎉🎉🎉</span>
         <ComponentR />
       </div>
 
@@ -129,7 +130,10 @@ function App(props: StoreProps) {
         <ComponentS otherProp="pizza" />
 
         <span>observer with di</span>
-        <ComponentT otherProp="taco" />
+        <ComponentT otherProp="hut" />
+
+        <span>di store and observer</span>
+        <ComponentU otherProp="taco" />
       </div>
     </div>
   )
