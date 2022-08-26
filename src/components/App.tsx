@@ -103,7 +103,7 @@ function App(props: StoreProps) {
         <span>observer deeply nested 🎉</span>
         <DummyNested />
 
-        <span>observer wrapped export function 🎉, like N but it works</span>
+        <span>observer wrapped export function 🎉🎉🎉, like N but it works</span>
         <ComponentR />
       </div>
     </div>
