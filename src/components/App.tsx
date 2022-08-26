@@ -6,6 +6,7 @@ import ComponentC from './ComponentC';
 import ComponentJ from './ComponentJ';
 import ComponentM from './ComponentM';
 import ComponentN from './ComponentN';
+import ComponentO from './ComponentO';
 
 export interface StoreProps {
   store: StoreType;
@@ -35,6 +36,7 @@ function App(props: StoreProps) {
           <button onClick={() => { store.increaseL() }}>L</button>
           <button onClick={() => { store.increaseM() }}>M</button>
           <button onClick={() => { store.increaseN() }}>N</button>
+          <button onClick={() => { store.increaseO() }}>O</button>
         </div>
       </div>
 
@@ -62,6 +64,9 @@ function App(props: StoreProps) {
 
         <span>observer wrapped export</span>
         <ComponentN />
+
+        <span>observer 🎉</span>
+        <ComponentO />
       </div>
     </div>
   )

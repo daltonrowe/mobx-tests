@@ -12,4 +12,4 @@ const ComponentN = () => {
   )
 };
 
-export default observer(() => (<ComponentN />))
+export default observer(() => <ComponentN />)
