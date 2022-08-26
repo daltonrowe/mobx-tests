@@ -1,4 +1,4 @@
-import { observer, Observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import { useStore } from "../store/store";
 
 const ComponentN = () => {
@@ -6,7 +6,7 @@ const ComponentN = () => {
 
   return (
     <div>
-      <pre>{store.counterM}</pre>
+      <pre>{store.counterN}</pre>
       <button onClick={() => { store.increaseN() }}>Increase Counter N</button>
     </div>
   )
