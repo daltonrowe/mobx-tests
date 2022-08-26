@@ -16,6 +16,20 @@ function App(props: StoreProps) {
       <h1>MobX Render Tests</h1>
 
       <div>
+        <h2>Controls</h2>
+        <div>
+          <button onClick={() => { store.increaseA() }}>A</button>
+          <button onClick={() => { store.increaseB() }}>B</button>
+          <button onClick={() => { store.increaseC() }}>C</button>
+          <button onClick={() => { store.increaseD() }}>D</button>
+          <button onClick={() => { store.increaseE() }}>E</button>
+          <button onClick={() => { store.increaseF() }}>F</button>
+          <button onClick={() => { store.increaseG() }}>G</button>
+          <button onClick={() => { store.increaseH() }}>H</button>
+        </div>
+      </div>
+
+      <div>
         <h2>Prop Drilling</h2>
 
         <span>non observer</span>
