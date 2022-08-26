@@ -1,4 +1,5 @@
 import { Instance, types } from "mobx-state-tree";
+import { createContext, useContext } from "react";
 
 export const Store = types.model('Store', {
   counterA: types.optional(types.number, 0),
@@ -13,6 +14,8 @@ export const Store = types.model('Store', {
   counterJ: types.optional(types.number, 0),
   counterK: types.optional(types.number, 0),
   counterL: types.optional(types.number, 0),
+  counterM: types.optional(types.number, 0),
+  counterN: types.optional(types.number, 0),
 }).actions(self => {
   return {
     increaseA: () => {
@@ -62,14 +65,23 @@ export const Store = types.model('Store', {
     increaseL: () => {
       self.counterL = self.counterL + 1
     },
+
+    increaseM: () => {
+      self.counterM = self.counterM + 1
+    },
+
+    increaseN: () => {
+      self.counterN = self.counterN + 1
+    },
   }
 })
 
 export type StoreType = Instance<typeof Store>;
 
-export function createStore(): StoreType {
-  const store = Store.create();
-  return store;
-}
+const store = Store.create();
 
-export default createStore;
+export default store;
+
+export const StoreContext = createContext<StoreType>(store)
+
+export const useStore = () => useContext(StoreContext);

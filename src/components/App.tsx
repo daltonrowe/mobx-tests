@@ -4,6 +4,8 @@ import ComponentA from './ComponentA';
 import ComponentB from './ComponentB';
 import ComponentC from './ComponentC';
 import ComponentJ from './ComponentJ';
+import ComponentM from './ComponentM';
+import ComponentN from './ComponentN';
 
 export interface StoreProps {
   store: StoreType;
@@ -31,6 +33,8 @@ function App(props: StoreProps) {
           <button onClick={() => { store.increaseJ() }}>J</button>
           <button onClick={() => { store.increaseK() }}>K</button>
           <button onClick={() => { store.increaseL() }}>L</button>
+          <button onClick={() => { store.increaseM() }}>M</button>
+          <button onClick={() => { store.increaseN() }}>N</button>
         </div>
       </div>
 
@@ -50,6 +54,15 @@ function App(props: StoreProps) {
         <ComponentJ store={store} />
       </div>
 
+      <div>
+        <h2>Context Hook</h2>
+
+        <span>non observer</span>
+        <ComponentM />
+
+        <span>observer wrapped export</span>
+        <ComponentN />
+      </div>
     </div>
   )
 }
