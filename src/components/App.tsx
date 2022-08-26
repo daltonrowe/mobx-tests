@@ -125,10 +125,10 @@ function App(props: StoreProps) {
       <div style={{ display: collapseThree ? 'none' : 'block' }}>
         <h2>Context HOC DI</h2>
 
-        <span>clean non observer with di</span>
+        <span>non observer with di</span>
         <ComponentS otherProp="pizza" />
 
-        <span>clean observer with di</span>
+        <span>observer with di</span>
         <ComponentT otherProp="taco" />
       </div>
     </div>
