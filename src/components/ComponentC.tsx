@@ -38,10 +38,10 @@ const ComponentC = observer((props: StoreProps) => {
       <span>store / action</span>
       <ComponentG store={store} action={() => { store.increaseG() }} />
 
-      <span>useCallback</span>
+      <span>store / action + useCallback</span>
       <ComponentH store={store} action={handleClickCallback} />
 
-      <span>memo</span>
+      <span>store / count + memo</span>
       <ComponentI store={store} count={store.counterI} />
     </div>
   )
