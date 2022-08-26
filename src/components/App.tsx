@@ -31,6 +31,7 @@ function App(props: StoreProps) {
           <button onClick={() => { store.increaseJ() }}>J</button>
           <button onClick={() => { store.increaseK() }}>K</button>
           <button onClick={() => { store.increaseL() }}>L</button>
+          <button onClick={() => { store.increaseM() }}>M</button>
         </div>
       </div>
 

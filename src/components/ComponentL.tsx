@@ -13,7 +13,7 @@ const ComponentL = observer((props: ComponentLProps) => {
   return (
     <div>
       <pre>{count}</pre>
-      <button onClick={store.increaseL}>Increase Counter L</button>
+      <button onClick={() => { store.increaseL() }}>Increase Counter L</button>
     </div>
   )
 })
